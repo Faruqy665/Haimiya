@@ -1,3 +1,4 @@
+cat > /mnt/user-data/outputs/haimiya/buildozer.spec << 'EOF'
 [app]
 title = Haimiya
 package.name = haimiya
@@ -27,5 +28,11 @@ android.api = 33
 android.minapi = 24
 android.archs = arm64-v8a, armeabi-v7a
 
+# Wajib True biar proses build otomatis (CI) nggak macet nungguin
+# konfirmasi lisensi Android SDK secara manual.
+android.accept_sdk_license = True
+
 [buildozer]
 log_level = 2
+EOF
+echo done
